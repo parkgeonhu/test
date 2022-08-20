@@ -10,7 +10,7 @@ public class Bucket4jTrafficControlSupport implements TrafficControlSupport {
 
     private final Bucket bucket;
 
-    public Bucket4jTrafficControlSupport(int capacity, int refillTokens, Duration duration){
+    public Bucket4jTrafficControlSupport(int capacity, int refillTokens, Duration duration) {
         Bandwidth limit = Bandwidth.classic(capacity, Refill.intervally(refillTokens, duration));
         this.bucket = Bucket.builder()
                 .addLimit(limit)
@@ -18,7 +18,7 @@ public class Bucket4jTrafficControlSupport implements TrafficControlSupport {
     }
 
     public boolean tryRequest() {
-        if(bucket.tryConsume(1)){
+        if (bucket.tryConsume(1)) {
             return true;
         }
         return false;

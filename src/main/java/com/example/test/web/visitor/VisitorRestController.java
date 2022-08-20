@@ -14,10 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class VisitorRestController {
-
-    @Autowired
     VisitorService visitorService;
 
+    public VisitorRestController(VisitorService visitorService){
+        this.visitorService = visitorService;
+    }
 
     Logger log = LoggerFactory.getLogger(VisitorRestController.class);
 

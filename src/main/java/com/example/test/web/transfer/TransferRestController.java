@@ -28,18 +28,17 @@ public class TransferRestController {
     }
 
     @PostConstruct
-    public void setUp(){
+    public void setUp() {
         if (trafficControl) {
             trafficControlSupport = new Bucket4jTrafficControlSupport(1, 1, Duration.ofSeconds(5));
         }
     }
 
 
-
     // [TO-DO] AspectJ를 이용해 부가기능으로 빼기
     @GetMapping("/register/auto-transfer")
     public ResponseEntity<?> registerAutoTransfer() {
-        if (trafficControl==true && !trafficControlSupport.tryRequest()) {
+        if (trafficControl == true && !trafficControlSupport.tryRequest()) {
             return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).body("Too Many Requests");
         }
         return ResponseEntity.status(HttpStatus.CREATED).body("Register auto-transfer");
