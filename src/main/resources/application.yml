@@ -2,3 +2,6 @@ logging:
   level:
     com.example.test: debug
     org.springframework.web: debug
+
+transfer:
+  trafficControl: true
