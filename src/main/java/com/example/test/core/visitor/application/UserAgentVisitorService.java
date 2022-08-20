@@ -1,8 +1,8 @@
-package com.example.test.service.impl;
+package com.example.test.core.visitor.application;
 
-import com.example.test.model.Visitor;
-import com.example.test.repository.VisitorRepository;
-import com.example.test.service.VisitorService;
+import com.example.test.core.visitor.domain.VisitorRepository;
+import com.example.test.core.visitor.domain.Visitor;
+import com.example.test.core.visitor.application.VisitorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

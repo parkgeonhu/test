@@ -1,7 +1,7 @@
-package com.example.test.controller;
+package com.example.test.web.visitor;
 
-import com.example.test.model.Visitor;
-import com.example.test.service.VisitorService;
+import com.example.test.core.visitor.domain.Visitor;
+import com.example.test.core.visitor.application.VisitorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

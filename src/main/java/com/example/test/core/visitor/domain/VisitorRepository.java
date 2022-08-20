@@ -1,8 +1,6 @@
-package com.example.test.repository;
+package com.example.test.core.visitor.domain;
 
-import com.example.test.model.Visitor;
-
-import java.util.List;
+import com.example.test.core.visitor.domain.Visitor;
 
 public interface VisitorRepository {
     int countDistinctVisitor();
