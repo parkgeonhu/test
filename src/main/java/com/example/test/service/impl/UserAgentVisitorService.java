@@ -11,12 +11,13 @@ public class UserAgentVisitorService implements VisitorService {
     @Autowired
     public VisitorRepository visitorRepository;
 
-    public void save(Visitor visitor){
-        visitorRepository.save(visitor);
-    }
-
+    @Override
     public int count() {
         return visitorRepository.countDistinctVisitor();
     }
 
+    @Override
+    public void save(Visitor visitor) {
+        visitorRepository.save(visitor);
+    }
 }
