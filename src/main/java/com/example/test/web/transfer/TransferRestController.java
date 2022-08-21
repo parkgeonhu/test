@@ -22,15 +22,16 @@ public class TransferRestController {
     @Value("${transfer.trafficControl}")
     boolean trafficControl;
 
-    TrafficControlSupport trafficControlSupport = null;
+    TrafficControlSupport trafficControlSupport;
 
-    public TransferRestController() {
+    public TransferRestController(TrafficControlSupport trafficControlSupport) {
+        this.trafficControlSupport = trafficControlSupport;
     }
 
     @PostConstruct
     public void setUp() {
         if (trafficControl) {
-            trafficControlSupport = new Bucket4jTrafficControlSupport(1, 1, Duration.ofSeconds(5));
+            trafficControlSupport.setBucket(1, 1, Duration.ofSeconds(5));
         }
     }
 
